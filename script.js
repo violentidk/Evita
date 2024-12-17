@@ -149,55 +149,53 @@ const topics = [
                 title: "Reaktsioonid hapetega",
                 content: `
                     <h3>Hapete reaktsioonid</h3>
-                    <p>Happed on aktiivsed ained, mis osalevad paljudes keemilistes reaktsioonides.</p>
+                    <p>Hapete reageerimisel teiste ainetega tekivad uued ained. Hapete reaktsioone iseloomustavad kindlad tunnused.</p>
 
                     <h4>Hapete põhilised reaktsioonid</h4>
                     <ol>
                         <li><strong>Reaktsioonid metallidega</strong>
                             <ul>
-                                <li>Hape + metall → sool + vesinik↑</li>
+                                <li>Hape + aktiivne metall → sool + vesinik↑</li>
                                 <li>Näiteks: 2HCl + Zn → ZnCl₂ + H₂↑</li>
-                                <li>Ei reageeri väärismetallidega (Au, Pt, Ag)</li>
+                                <li>Metallide aktiivsuse rida määrab reaktsiooni toimumise</li>
                             </ul>
                         </li>
-                        <li><strong>Reaktsioonid metalloksiididega</strong>
+                        <li><strong>Reaktsioonid aluseliste oksiididega</strong>
                             <ul>
-                                <li>Hape + metalloksiid → sool + vesi</li>
-                                <li>Näiteks: 2HCl + CuO → CuCl₂ + H₂O</li>
+                                <li>Hape + aluseline oksiid → sool + vesi</li>
+                                <li>Näiteks: 2HCl + CaO → CaCl₂ + H₂O</li>
                             </ul>
                         </li>
                         <li><strong>Reaktsioonid alustega</strong>
                             <ul>
                                 <li>Hape + alus → sool + vesi</li>
-                                <li>Näiteks: HCl + NaOH → NaCl + H₂O</li>
-                                <li>Neutralisatsioonireaktsioon</li>
+                                <li>Näiteks: H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O</li>
                             </ul>
                         </li>
                     </ol>
 
                     <h4>Reaktsioonide tunnused</h4>
                     <ul>
-                        <li>Gaaside eraldumine (H₂)</li>
-                        <li>Värvimuutused</li>
-                        <li>Soojuse eraldumine</li>
-                        <li>Sademete teke</li>
+                        <li>Vesiniku eraldumine (reaktsioonil metallidega)</li>
+                        <li>Lahuse värvuse muutus</li>
+                        <li>Temperatuuri tõus</li>
                     </ul>
                 `,
                 quiz: [
                     {
-                        question: "Mis gaas eraldub happe reageerimisel metalliga?",
-                        options: ["Hapnik", "Vesinik", "Lämmastik", "Süsihappegaas"],
+                        question: "Millise metalli ja happe vahelisel reaktsioonil eraldub vesinik?",
+                        options: ["Vask ja soolhape", "Tsink ja soolhape", "Kuld ja soolhape", "Hõbe ja soolhape"],
                         correct: 1
                     },
                     {
-                        question: "Millised on neutralisatsioonireaktsiooni saadused?",
+                        question: "Mis tekib happe ja aluselise oksiidi vahelisel reaktsioonil?",
                         options: ["Sool ja vesinik", "Sool ja vesi", "Alus ja vesi", "Oksiid ja vesi"],
                         correct: 1
                     },
                     {
-                        question: "Milline metall EI reageeri hapetega?",
-                        options: ["Tsink", "Raud", "Kuld", "Magneesium"],
-                        correct: 2
+                        question: "Mis on neutralisatsioonireaktsiooni saadused?",
+                        options: ["Sool ja vesi", "Sool ja vesinik", "Alus ja vesi", "Oksiid ja vesi"],
+                        correct: 0
                     }
                 ]
             },
@@ -206,107 +204,54 @@ const topics = [
                 title: "Alused",
                 content: `
                     <h3>Alused</h3>
-                    <p>Alused on ühendid, mis annavad vesilahuses hüdroksiidioonid (OH⁻). Need on hapete vastandained.</p>
+                    <p>Alused on ained, mis sisaldavad metalliaatomit ja hüdroksiidioone (OH⁻).</p>
 
-                    <h4>Aluste koostis ja ehitus</h4>
+                    <h4>Aluste ehitus</h4>
                     <ul>
-                        <li>Aluste üldvalem on Me(OH)ₙ</li>
-                        <li>Me - metalli aatom</li>
-                        <li>n - hüdroksiidioonide arv</li>
+                        <li>Aluste koostises on metall ja hüdroksiidioonid</li>
+                        <li>Üldvalem: Me(OH)ₙ, kus Me on metall</li>
+                        <li>Näiteks: NaOH, KOH, Ca(OH)₂</li>
                     </ul>
 
-                    <h4>Aluste liigitamine</h4>
-                    <ol>
-                        <li><strong>Lahustuvuse järgi:</strong>
+                    <h4>Aluste liigitus lahustuvuse järgi</h4>
+                    <ul>
+                        <li><strong>Lahustuvad alused (leelised)</strong>
                             <ul>
-                                <li>Lahustuvad alused (leelised) - NaOH, KOH</li>
-                                <li>Lahustumatud alused - Cu(OH)₂, Fe(OH)₃</li>
+                                <li>NaOH - naatriumhüdroksiid</li>
+                                <li>KOH - kaaliumhüdroksiid</li>
+                                <li>Ca(OH)₂ - kaltsiumhüdroksiid</li>
                             </ul>
                         </li>
-                        <li><strong>Tugevuse järgi:</strong>
+                        <li><strong>Lahustumatud alused</strong>
                             <ul>
-                                <li>Tugevad alused - NaOH, KOH, Ca(OH)₂</li>
-                                <li>Nõrgad alused - NH₄OH, Fe(OH)₂</li>
+                                <li>Cu(OH)₂ - vaskhüdroksiid</li>
+                                <li>Fe(OH)₃ - raud(III)hüdroksiid</li>
                             </ul>
                         </li>
-                    </ol>
+                    </ul>
 
                     <h4>Aluste omadused</h4>
                     <ul>
-                        <li>Muudavad indikaatorite värvi (lakmus → sinine)</li>
+                        <li>Muudavad indikaatorite värvi (lakmus siniseks)</li>
                         <li>Reageerivad hapetega (neutralisatsioon)</li>
-                        <li>Söövitavad omadused (eriti leelistel)</li>
+                        <li>Leelised on söövitavad ained</li>
                     </ul>
                 `,
                 quiz: [
                     {
-                        question: "Milline ioon tekib aluste dissotsieerumisel?",
-                        options: ["H⁺", "OH⁻", "Cl⁻", "Na⁺"],
-                        correct: 1
-                    },
-                    {
-                        question: "Milline järgnevatest on lahustuv alus (leelis)?",
-                        options: ["Cu(OH)₂", "Fe(OH)₃", "NaOH", "Mg(OH)₂"],
+                        question: "Milline järgnevatest on lahustuv alus?",
+                        options: ["Cu(OH)₂", "Fe(OH)₃", "NaOH", "Al(OH)₃"],
                         correct: 2
                     },
                     {
                         question: "Mis värvi muutub lakmus aluselises keskkonnas?",
-                        options: ["Punaseks", "Roheliseks", "Siniseks", "Kollaseks"],
-                        correct: 2
-                    }
-                ]
-            },
-            {
-                id: 'reaktsioonid-alustega',
-                title: "Reaktsioonid alustega",
-                content: `
-                    <h3>Aluste reaktsioonid</h3>
-                    <p>Alused osalevad mitmetes olulistes keemilistes reaktsioonides.</p>
-
-                    <h4>Aluste põhilised reaktsioonid</h4>
-                    <ol>
-                        <li><strong>Reaktsioonid hapetega</strong>
-                            <ul>
-                                <li>Alus + hape → sool + vesi</li>
-                                <li>Näiteks: NaOH + HCl → NaCl + H₂O</li>
-                            </ul>
-                        </li>
-                        <li><strong>Reaktsioonid mittemetallide oksiididega</strong>
-                            <ul>
-                                <li>Alus + mittemetalli oksiid → sool + vesi</li>
-                                <li>Näiteks: 2NaOH + CO₂ → Na₂CO₃ + H₂O</li>
-                            </ul>
-                        </li>
-                        <li><strong>Reaktsioonid sooladega</strong>
-                            <ul>
-                                <li>Võib toimuda sademe teke</li>
-                                <li>Näiteks: 2NaOH + CuCl₂ → Cu(OH)₂↓ + 2NaCl</li>
-                            </ul>
-                        </li>
-                    </ol>
-
-                    <h4>Reaktsioonide tunnused</h4>
-                    <ul>
-                        <li>Värviliste sademete teke</li>
-                        <li>Soojuse eraldumine</li>
-                        <li>pH muutus</li>
-                    </ul>
-                `,
-                quiz: [
-                    {
-                        question: "Mis tekib aluse ja happe vahelisel reaktsioonil?",
-                        options: ["Uus alus ja vesi", "Sool ja vesinik", "Sool ja vesi", "Oksiid ja vesi"],
+                        options: ["Punaseks", "Kollaseks", "Siniseks", "Roheliseks"],
                         correct: 2
                     },
                     {
-                        question: "Millega reageerivad alused hästi?",
-                        options: ["Väärismetallidega", "Mittemetallide oksiididega", "Inertgaasidega", "Veega"],
+                        question: "Millised ioonid on aluste koostises?",
+                        options: ["H⁺", "OH⁻", "Cl⁻", "SO₄²⁻"],
                         correct: 1
-                    },
-                    {
-                        question: "Mis on aluse ja happe vahelise reaktsiooni nimetus?",
-                        options: ["Oksüdeerumine", "Redutseerimine", "Neutralisatsioon", "Dissotsiatsioon"],
-                        correct: 2
                     }
                 ]
             }
