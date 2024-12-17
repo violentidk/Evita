@@ -470,3 +470,49 @@ body {
     z-index: 2000;
     animation: fadeIn 0.3s ease forwards;
 }
+
+/* Kontrollitöö stiilid */
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timer {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    background: rgba(33, 150, 243, 0.1);
+    border-radius: 6px;
+}
+
+.exam-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Tulemuste stiilid */
+.exam-results {
+    text-align: center;
+    padding: 2rem;
+}
+
+.exam-score {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.exam-feedback {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--background-color);
+}

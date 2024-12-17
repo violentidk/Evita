@@ -7,69 +7,106 @@ const topics = [
                 id: 'oksiidid',
                 title: "Oksiidid",
                 content: `
-                    <h3>Oksiidid</h3>
-                    <p>Oksiidid on liitained, mis koosnevad elemendist ja hapnikust. Oksiidid on ühed tähtsamad anorgaanilised ühendid.</p>
+                    <h3>Oksiidid - Põhjalik ülevaade</h3>
                     
-                    <h4>Oksiidide koostis ja ehitus</h4>
-                    <ul>
-                        <li>Oksiidid sisaldavad hapnikku, mille oksüdatsiooniaste on -2</li>
-                        <li>Oksiidid tekivad elementide ühinemisel hapnikuga (oksüdeerumisel)</li>
-                        <li>Oksiidide valem näitab elemendi ja hapniku aatomite arvu suhet</li>
-                    </ul>
+                    <div class="theory-section">
+                        <h4>1. Oksiidide olemus</h4>
+                        <p>Oksiidid on ühendid, kus hapnik on ühinenud teise elemendiga. Kõige lihtsam on seda mõista näidete abil:</p>
+                        <ul>
+                            <li>Kui raud roostetab, ühineb see õhus oleva hapnikuga → tekib raudoksiid (Fe₂O₃)</li>
+                            <li>Kui me hingame välja, väljub süsinikdioksiid (CO₂)</li>
+                        </ul>
+                    </div>
 
-                    <h4>Oksiidide liigitamine ja omadused</h4>
-                    <ol>
-                        <li><strong>Mittemetallilised oksiidid</strong>
+                    <div class="theory-section">
+                        <h4>2. Oksiidide valemid</h4>
+                        <p>Oksiidide valemites näitab:</p>
+                        <ul>
+                            <li>Elemendi sümbol - milline element on ühinenud hapnikuga</li>
+                            <li>O - hapniku sümbol</li>
+                            <li>Numbrid all paremal - aatomite arvu ühendis</li>
+                        </ul>
+                        <div class="example-box">
+                            <p><strong>Näited:</strong></p>
                             <ul>
-                                <li>Näiteks CO₂ (süsinikdioksiid), SO₂ (vääveldioksiid)</li>
-                                <li>Reageerivad veega, moodustades happeid</li>
-                                <li>Reageerivad alustega, moodustades sooli</li>
+                                <li>CO₂ - üks süsiniku aatom ja kaks hapniku aatomit</li>
+                                <li>Fe₂O₃ - kaks raua aatomit ja kolm hapniku aatomit</li>
                             </ul>
-                        </li>
-                        <li><strong>Metallilised oksiidid</strong>
-                            <ul>
-                                <li>Näiteks CaO (kaltsiumoksiid), Na₂O (naatriumoksiid)</li>
-                                <li>Reageerivad veega, moodustades aluseid</li>
-                                <li>Reageerivad hapetega, moodustades sooli</li>
-                            </ul>
-                        </li>
-                    </ol>
+                        </div>
+                    </div>
 
-                    <h4>Oksiidide tähtsus</h4>
-                    <ul>
-                        <li>Süsinikdioksiid (CO₂) - fotosünteesis ja kasvuhooneefektis</li>
-                        <li>Lämmastikoksiidid - õhusaaste tekitajad</li>
-                        <li>Metallide oksiidid - ehitusmaterjalides (CaO lubjas)</li>
-                        <li>Ränidioksiid (SiO₂) - liiva ja kvartsiklaasi koostises</li>
-                    </ul>
+                    <div class="theory-section">
+                        <h4>3. Oksiidide liigid</h4>
+                        <div class="two-columns">
+                            <div class="column">
+                                <h5>Metallilised oksiidid</h5>
+                                <ul>
+                                    <li>CaO - kaltsiumoksiid (lubi)</li>
+                                    <li>Fe₂O₃ - raud(III)oksiid (rooste)</li>
+                                    <li>Al₂O₃ - alumiiniumoksiid</li>
+                                </ul>
+                                <p><strong>Omadused:</strong></p>
+                                <ul>
+                                    <li>Reageerivad veega → tekivad alused</li>
+                                    <li>Reageerivad hapetega → tekivad soolad</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h5>Mittemetallilised oksiidid</h5>
+                                <ul>
+                                    <li>CO₂ - süsinikdioksiid</li>
+                                    <li>SO₂ - vääveldioksiid</li>
+                                    <li>NO₂ - lämmastikdioksiid</li>
+                                </ul>
+                                <p><strong>Omadused:</strong></p>
+                                <ul>
+                                    <li>Reageerivad veega → tekivad happed</li>
+                                    <li>Reageerivad alustega → tekivad soolad</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-section">
+                        <h4>4. Olulised reaktsioonid</h4>
+                        <div class="reaction-box">
+                            <p><strong>Metallilise oksiidi reaktsioon veega:</strong></p>
+                            <p>CaO + H₂O → Ca(OH)₂</p>
+                            <p class="explanation">Lubi + vesi → kustutatud lubi</p>
+                        </div>
+                        <div class="reaction-box">
+                            <p><strong>Mittemetallilise oksiidi reaktsioon veega:</strong></p>
+                            <p>CO₂ + H₂O → H₂CO₃</p>
+                            <p class="explanation">Süsinikdioksiid + vesi → süsihape</p>
+                        </div>
+                    </div>
                 `,
-                quiz: [
-                    {
-                        question: "Milline on hapniku oksüdatsiooniaste oksiidides?",
-                        options: ["-1", "-2", "+2", "+1"],
-                        correct: 1
-                    },
-                    {
-                        question: "Mis tekib mittemetallilise oksiidi reageerimisel veega?",
-                        options: ["Alus", "Hape", "Sool", "Uus oksiid"],
-                        correct: 1
-                    },
-                    {
-                        question: "Milline järgnevatest on metalloksiid?",
-                        options: ["SO₂", "CO₂", "CaO", "NO₂"],
-                        correct: 2
-                    },
-                    {
-                        question: "Millise oksiidi osalemine fotosünteesis on vajalik?",
-                        options: ["CO₂", "SO₂", "NO₂", "CaO"],
-                        correct: 0
-                    },
-                    {
-                        question: "Mis ühend tekib metallilise oksiidi reageerimisel veega?",
-                        options: ["Hape", "Sool", "Alus", "Uus oksiid"],
-                        correct: 2
+                quiz: {
+                    practice: {
+                        questions: [
+                            {
+                                question: "Millest koosnevad kõik oksiidid?",
+                                options: [
+                                    "Ainult metallist", 
+                                    "Hapnikust ja mingist teisest elemendist", 
+                                    "Ainult veest", 
+                                    "Ainult mittemetallist"
+                                ],
+                                correct: 1
+                            },
+                            {
+                                question: "Milline järgnevatest on metallioksiid?",
+                                options: ["CO₂", "CaO", "SO₂", "NO₂"],
+                                correct: 1
+                            },
+                            {
+                                question: "Mis tekib mittemetallilise oksiidi reageerimisel veega?",
+                                options: ["Alus", "Hape", "Sool", "Vesinik"],
+                                correct: 1
+                            }
+                        ]
                     }
-                ]
+                }
             },
             {
                 id: 'happed',
@@ -96,7 +133,7 @@ const topics = [
                         <li><strong>Tugevuse järgi:</strong>
                             <ul>
                                 <li>Tugevad happed (HCl, H₂SO₄, HNO₃)</li>
-                                <li>Nõrgad happed (H₂CO₃, H₂S)</li>
+                                <li>Nõrgad happed (H₂CO₃, H₂SO₄)</li>
                             </ul>
                         </li>
                     </ol>
@@ -208,8 +245,8 @@ const topics = [
 
                     <h4>Aluste ehitus</h4>
                     <ul>
-                        <li>Aluste koostises on metall ja hüdroksiidioonid</li>
-                        <li>Üldvalem: Me(OH)ₙ, kus Me on metall</li>
+                        <li>Aluste koostises on metall ja h��droksiidioonid</li>
+                        <li>��ldvalem: Me(OH)ₙ, kus Me on metall</li>
                         <li>Näiteks: NaOH, KOH, Ca(OH)₂</li>
                     </ul>
 
@@ -329,8 +366,15 @@ function showQuiz() {
     const modal = document.getElementById('quizModal');
     const quizContent = document.getElementById('quizContent');
     
+    if (!section.quiz?.practice?.questions) {
+        console.error('Quiz questions not found');
+        return;
+    }
+
+    const questions = section.quiz.practice.questions;
+    
     let html = '';
-    section.quiz.forEach((q, index) => {
+    questions.forEach((q, index) => {
         html += `
             <div class="quiz-question">
                 <p><strong>${index + 1}. ${q.question}</strong></p>
@@ -348,7 +392,6 @@ function showQuiz() {
     
     quizContent.innerHTML = html;
     modal.style.display = 'block';
-    // Väike viivitus, et display: block jõuaks rakenduda
     setTimeout(() => {
         modal.classList.add('show');
     }, 10);
@@ -377,9 +420,10 @@ function closeQuiz() {
 function checkAnswers() {
     const topic = topics.find(t => t.id === activeTopicId);
     const section = topic.sections.find(s => s.id === activeSectionId);
+    const practiceQuestions = section.quiz.practice.questions;
     let correct = 0;
     
-    section.quiz.forEach((q, index) => {
+    practiceQuestions.forEach((q, index) => {
         const options = document.querySelectorAll(`input[name="q${index}"]`);
         options.forEach((option, i) => {
             const label = option.closest('.option');
@@ -398,7 +442,7 @@ function checkAnswers() {
         });
     });
 
-    // Loome tulemuste pop-up
+    // Tulemuste pop-up
     const overlay = document.createElement('div');
     overlay.className = 'result-overlay';
     
@@ -406,9 +450,9 @@ function checkAnswers() {
     popup.className = 'result-popup';
     
     let message = '';
-    if (correct === section.quiz.length) {
+    if (correct === practiceQuestions.length) {
         message = 'Suurepärane tulemus!';
-    } else if (correct > section.quiz.length / 2) {
+    } else if (correct > practiceQuestions.length / 2) {
         message = 'Hea tulemus, aga saab veel paremini!';
     } else {
         message = 'Proovi veel, harjutamine teeb meistriks!';
@@ -416,15 +460,13 @@ function checkAnswers() {
 
     popup.innerHTML = `
         <h3>Sinu tulemus</h3>
-        <div class="score">${correct}/${section.quiz.length}</div>
+        <div class="score">${correct}/${practiceQuestions.length}</div>
         <p class="message">${message}</p>
         <button class="btn btn-primary" onclick="closeResults()">Sulge</button>
     `;
 
     document.body.appendChild(overlay);
     document.body.appendChild(popup);
-
-    // Sulgemine klõpsuga väljaspool
     overlay.addEventListener('click', closeResults);
 }
 
