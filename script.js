@@ -287,17 +287,48 @@ function checkAnswers() {
         });
     });
 
-    // Kuvame tulemuse
-    const resultDiv = document.createElement('div');
-    resultDiv.className = 'quiz-result';
-    resultDiv.innerHTML = `
-        <h3>Tulemus: ${correct}/${section.quiz.length}</h3>
-        <p>${correct === section.quiz.length ? 'Suurepärane!' : 'Proovi uuesti!'}</p>
-    `;
+    // Loome tulemuste pop-up
+    const overlay = document.createElement('div');
+    overlay.className = 'result-overlay';
     
-    const quizContent = document.getElementById('quizContent');
-    if (!document.querySelector('.quiz-result')) {
-        quizContent.appendChild(resultDiv);
+    const popup = document.createElement('div');
+    popup.className = 'result-popup';
+    
+    let message = '';
+    if (correct === section.quiz.length) {
+        message = 'Suurepärane tulemus!';
+    } else if (correct > section.quiz.length / 2) {
+        message = 'Hea tulemus, aga saab veel paremini!';
+    } else {
+        message = 'Proovi veel, harjutamine teeb meistriks!';
+    }
+
+    popup.innerHTML = `
+        <h3>Sinu tulemus</h3>
+        <div class="score">${correct}/${section.quiz.length}</div>
+        <p class="message">${message}</p>
+        <button class="btn btn-primary" onclick="closeResults()">Sulge</button>
+    `;
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(popup);
+
+    // Sulgemine klõpsuga väljaspool
+    overlay.addEventListener('click', closeResults);
+}
+
+// Tulemuste sulgemise funktsioon
+function closeResults() {
+    const overlay = document.querySelector('.result-overlay');
+    const popup = document.querySelector('.result-popup');
+    
+    if (overlay && popup) {
+        overlay.style.opacity = '0';
+        popup.style.opacity = '0';
+        setTimeout(() => {
+            overlay.remove();
+            popup.remove();
+        }, 300);
     }
 }
 

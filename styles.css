@@ -426,3 +426,47 @@ body {
     animation: slideInLeft 0.3s ease forwards;
     animation-delay: calc(var(--index) * 0.05s);
 }
+
+/* Tulemuste pop-up */
+.result-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    z-index: 2001;
+    animation: scaleIn 0.3s ease forwards;
+}
+
+.result-popup h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.result-popup .score {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.result-popup .message {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    animation: fadeIn 0.3s ease forwards;
+}
