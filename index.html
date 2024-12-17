@@ -5,24 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keemia Õppematerjal</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
-        <nav class="glass-card navigation">
-            <h1>Keemia Õppematerjal</h1>
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Otsi teemat...">
+        <!-- Päis -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>Keemia</h1>
+                <div class="search-container">
+                    <span class="material-icons">search</span>
+                    <input type="text" id="searchInput" placeholder="Otsi teemat...">
+                </div>
             </div>
-        </nav>
+        </header>
 
-        <main class="content-grid" id="mainContent">
-            <!-- Sisu genereeritakse JavaScriptiga -->
-        </main>
+        <div class="main-content">
+            <!-- Vasak menüü -->
+            <nav class="sidebar">
+                <div class="nav-group">
+                    <h2>Teemad</h2>
+                    <ul id="categoriesMenu" class="nav-list">
+                        <!-- Kategooriad lisatakse JavaScriptiga -->
+                    </ul>
+                </div>
+            </nav>
 
-        <div id="modal" class="modal">
-            <div class="modal-content glass-card">
-                <span class="close">&times;</span>
-                <div id="modalContent"></div>
+            <!-- Keskmine joon -->
+            <div class="divider"></div>
+
+            <!-- Parem sisu -->
+            <main class="content-area" id="mainContent">
+                <div class="content-header">
+                    <h2 id="currentTopic">Vali teema</h2>
+                </div>
+                <div class="content-body">
+                    <!-- Sisu lisatakse JavaScriptiga -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Test modal -->
+        <div id="quizModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Kontrolli oma teadmisi</h3>
+                    <span class="close-button material-icons">close</span>
+                </div>
+                <div id="quizContent" class="modal-body">
+                    <!-- Küsimused lisatakse JavaScriptiga -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="closeQuiz">Sulge</button>
+                    <button class="btn btn-primary" id="checkAnswers">Kontrolli vastuseid</button>
+                </div>
             </div>
         </div>
     </div>

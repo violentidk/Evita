@@ -1,120 +1,303 @@
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.18);
-    --primary-color: #0078d4;
-    --text-color: #323130;
+    --primary-color: #2196F3;
+    --primary-dark: #1976D2;
+    --background-color: #f8f9fa;
+    --border-color: #e9ecef;
+    --text-color: #212529;
+    --white: #ffffff;
 }
 
 body {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0;
-    font-family: "Segoe UI Variable", system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-    min-height: 100vh;
+    background: var(--background-color);
 }
 
-.app-container {
-    padding: 20px;
+/* Päis */
+.app-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
 }
 
-.navigation {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin-bottom: 20px;
-    padding: 20px;
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.search-container input {
-    padding: 10px 15px;
-    border-radius: 8px;
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.9);
-    width: 300px;
-}
-
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-    transition: transform 0.2s ease;
+/* Põhipaigutus */
+.main-content {
+    display: grid;
+    grid-template-columns: 280px 1px auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 64px);
 }
 
-.topic-card {
+/* Vasak menüü */
+.sidebar {
+    background: var(--white);
+    padding: 2rem;
+}
+
+.nav-group h2 {
+    margin-bottom: 1.5rem;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-.topic-card:hover {
-    transform: translateY(-5px);
+.nav-item:hover {
+    background: var(--background-color);
 }
 
-.topic-sections {
-    margin-top: 15px;
+.nav-item.active {
+    background: var(--primary-color);
+    color: var(--white);
 }
 
-.topic-sections p {
-    margin: 8px 0;
-    padding: 8px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.5);
+/* Keskmine joon */
+.divider {
+    width: 1px;
+    background: var(--border-color);
+    height: 100%;
 }
 
+/* Põhisisu ala */
+.content-area {
+    padding: 2rem;
+}
+
+/* Modal */
 .modal {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.75);
     z-index: 1000;
+    display: none;
 }
 
 .modal-content {
-    position: relative;
-    width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    width: 90%;
     max-width: 800px;
-    margin: 50px auto;
-    max-height: 80vh;
-    overflow-y: auto;
+    max-height: 90vh;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
-.close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Küsimused */
+.quiz-question {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
     cursor: pointer;
 }
 
+.option:hover {
+    background: var(--background-color);
+}
+
+.option input[type="radio"] {
+    margin-right: 1rem;
+}
+
+.option.correct {
+    background: #e8f5e9;
+    border-color: #4caf50;
+}
+
+.option.wrong {
+    background: #ffebee;
+    border-color: #f44336;
+}
+
+/* Nupud */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .navigation {
-        flex-direction: column;
-        text-align: center;
+    .main-content {
+        grid-template-columns: 1fr;
     }
     
-    .search-container input {
-        width: 100%;
+    .divider {
+        display: none;
     }
     
     .modal-content {
-        width: 95%;
-        margin: 20px auto;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
     }
-} 
+}
+
+/* Otsingu stiilid */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    width: 300px;
+    transition: all 0.2s ease;
+}
+
+.search-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.search-container .material-icons {
+    color: var(--text-color);
+    opacity: 0.5;
+    margin-right: 0.5rem;
+}
+
+.search-container input {
+    border: none;
+    background: none;
+    width: 100%;
+    padding: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search-container input::placeholder {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+/* Testi nupp */
+.quiz-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quiz-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.quiz-button .material-icons {
+    font-size: 1.25rem;
+}
+
+.quiz-button:active {
+    transform: translateY(0);
+}
+
+/* Sektsiooni sisu */
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-actions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive täiendused */
+@media (max-width: 768px) {
+    .search-container {
+        width: 100%;
+    }
+    
+    .quiz-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

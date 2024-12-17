@@ -1,0 +1,11 @@
+{
+  "name": "keemia-oppematerjal",
+  "version": "1.0.0",
+  "description": "Keemia õppematerjali veebileht",
+  "scripts": {
+    "start": "http-server . -p 8080"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+} 
