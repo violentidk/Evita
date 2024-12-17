@@ -241,6 +241,15 @@ function showQuiz() {
     setTimeout(() => {
         modal.classList.add('show');
     }, 10);
+
+    // Lisa animatsioonide indeksid
+    quizContent.querySelectorAll('.quiz-question').forEach((question, index) => {
+        question.style.setProperty('--index', index);
+    });
+    
+    quizContent.querySelectorAll('.option').forEach((option, index) => {
+        option.style.setProperty('--index', index);
+    });
 }
 
 // Modaali sulgemine
@@ -292,6 +301,42 @@ function checkAnswers() {
     }
 }
 
+// Tervituse modaali loomine
+function createWelcomeModal() {
+    const welcomeModal = document.createElement('div');
+    welcomeModal.className = 'welcome-modal';
+    welcomeModal.innerHTML = `
+        <div class="welcome-content">
+            <button class="welcome-close" onclick="closeWelcome()">
+                <span class="material-icons">close</span>
+            </button>
+            <h2>Evita 1.0 TEST</h2>
+            <p>Tere tulemast keemia õppekeskkonda!</p>
+            <button class="btn btn-primary" onclick="closeWelcome()">Alusta</button>
+        </div>
+    `;
+    
+    // Sulgemine klõpsuga väljaspool modaali
+    welcomeModal.addEventListener('click', (e) => {
+        if (e.target === welcomeModal) {
+            closeWelcome();
+        }
+    });
+    
+    document.body.appendChild(welcomeModal);
+}
+
+// Tervituse modaali sulgemine
+function closeWelcome() {
+    const welcomeModal = document.querySelector('.welcome-modal');
+    if (welcomeModal) {
+        welcomeModal.style.opacity = '0';
+        setTimeout(() => {
+            welcomeModal.remove();
+        }, 300);
+    }
+}
+
 // Sündmuste kuularid
 document.addEventListener('DOMContentLoaded', () => {
     createMenu();
@@ -325,4 +370,27 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.display = text.includes(searchText) ? 'block' : 'none';
         });
     });
-}); 
+
+    // Lisa tervituse modaal väikese viivitusega
+    setTimeout(() => {
+        createWelcomeModal();
+    }, 500);
+
+    // Animatsioonide lisamine elementidele
+    document.querySelectorAll('.nav-item').forEach((item, index) => {
+        item.style.setProperty('--index', index);
+    });
+
+    document.querySelectorAll('.section-card').forEach((card, index) => {
+        card.style.setProperty('--index', index);
+    });
+
+    document.querySelectorAll('.quiz-question').forEach((question, index) => {
+        question.style.setProperty('--index', index);
+    });
+
+    document.querySelectorAll('.option').forEach((option, index) => {
+        option.style.setProperty('--index', index);
+    });
+});
+ 

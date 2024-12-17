@@ -59,6 +59,9 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s;
+    opacity: 0;
+    animation: slideInLeft 0.3s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
 }
 
 .nav-item:hover {
@@ -137,6 +140,9 @@ body {
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: slideInUp 0.3s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
 }
 
 .option {
@@ -147,6 +153,9 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 6px;
     cursor: pointer;
+    opacity: 0;
+    animation: slideInLeft 0.3s ease forwards;
+    animation-delay: calc(var(--index) * 0.05s);
 }
 
 .option:hover {
@@ -300,4 +309,120 @@ body {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Animatsioonid */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Tervituse modaal */
+.welcome-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-content {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    animation: scaleIn 0.3s ease forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.welcome-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.welcome-content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.welcome-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.welcome-close:hover {
+    opacity: 1;
+}
+
+/* Elementide animatsioonid */
+.nav-item {
+    opacity: 0;
+    animation: slideInLeft 0.3s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+}
+
+.section-card {
+    opacity: 0;
+    animation: slideInUp 0.3s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+}
+
+.quiz-question {
+    opacity: 0;
+    animation: slideInUp 0.3s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+}
+
+.option {
+    opacity: 0;
+    animation: slideInLeft 0.3s ease forwards;
+    animation-delay: calc(var(--index) * 0.05s);
 }
